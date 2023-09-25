@@ -1,0 +1,34 @@
+ static string[] ShuffleCircularRandomizado(Random rng, string[] array ,string[] array2)
+        {
+            int n = Length(array);
+            int diferencia = Length(array) - array2.Length;
+            List<string> temp = new List<string>(array2);
+            ToString(temp);
+            Console.WriteLine("``");
+            Console.WriteLine(diferencia);
+            if(diferencia == 1)
+            {
+                int random = rng.Next(n);
+                temp.Insert(random, array[Length(array) - 1]);
+                ToString(temp);
+                Console.WriteLine("+");
+                if (true)
+                {
+
+                }
+                //array2 = temp.ToArray();
+                ToString(array2);
+                Console.WriteLine("*");
+                Console.ReadKey();
+
+            }
+            else if(diferencia == 2)
+            {
+                int random = rng.Next(n);
+                temp.Insert(random, array[Length(array) - 1]);
+                random = rng.Next(n--);
+                temp.Insert(random, array[Length(array)]);
+                array2 = temp.ToArray();
+            }
+            return array2;
+        }
