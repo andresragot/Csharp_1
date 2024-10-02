@@ -17,7 +17,7 @@ namespace AmigoInvisible
         {
             //este metodo funciona de que agarramos el ultimo valor y lo randomizamos, para que el random no se pase y aseurarnos de que los ultimos se randomicen
             int n = array.Length;
-            while(n>1)
+            while (n>1)
             {
                 int k = rng.Next(n--);
                 string temp = array[n];
@@ -62,7 +62,6 @@ namespace AmigoInvisible
                         //regresamos falso ya que no se hizo bien el shuffle
                         resultado = false;
                     }
-
                 }
             }
             //si estan vacios nos dice que estan vacios
@@ -78,12 +77,12 @@ namespace AmigoInvisible
         {
             //utilizamos el comparar de antes ya que no vamos a volver a escribir codigo ya hecho
             bool resultado = Comparar(array, array2);
-            if (array!=null && array2 != null)
+            if (array != null && array2 != null)
             {
                 for(int i = 0; i < array2.Length; i++)
                 {
                     //recorremos ambos arrays
-                    for(int j = 0; j<Length(parejas); j++)
+                    for(int j = 0; j < Length(parejas); j++)
                     {
                         //comparamos si uno de los regaladores forma parte de una pareja
                         if (array[i].Equals(parejas[j]))
@@ -97,7 +96,7 @@ namespace AmigoInvisible
                                 }                                
                             }
                             // si no es divisible entre 2 significa que esta es la segunda paraja administrada, entonces su pareja se encuentra una posicion menor
-                            else if(array2[i].Equals(parejas[j - 1]))
+                            else if (array2[i].Equals(parejas[j - 1]))
                             {
                                 resultado = false;
                             }
@@ -157,7 +156,7 @@ namespace AmigoInvisible
         {
             int i = 0;
             //aca utiizamos el array2 porque se inicializa a partir del array que es muy grande pero el array2 es justo lo que necesitamos
-            foreach(var value in array2)
+            foreach (var value in array2)
             {
                 Console.WriteLine("\t\t\t\t"+array[i] + "\t-->\t" + array2[i]);
                 i++;
@@ -198,7 +197,7 @@ namespace AmigoInvisible
         static int Length(string[] array)
         {
             int i = 0;
-            foreach(string value in array)
+            foreach (string value in array)
             {
                 if (value != null)
                 {
@@ -238,7 +237,8 @@ namespace AmigoInvisible
             do
             {
                 Shuffle(random, array2);
-            } while (!Comparar(array, array2));
+            } 
+            while (!Comparar(array, array2));
 
             ToString(array, array2);
 
@@ -263,7 +263,8 @@ namespace AmigoInvisible
             do
             {
                 Shuffle(random, array2);
-            } while (!CompararParejas(array, array2));
+            } 
+            while (!CompararParejas(array, array2));
 
             ToString(array, array2);
 
@@ -286,7 +287,8 @@ namespace AmigoInvisible
             do
             {
                 Shuffle(random, array2);
-            } while (!CompararCircular(array, array2));
+            } 
+            while (!CompararCircular(array, array2));
 
             ToString(array, array2);
 
@@ -337,7 +339,8 @@ namespace AmigoInvisible
             do
             {
                 Shuffle(random, array2);
-            } while (!CompararParejas(array, array2));
+            } 
+            while (!CompararParejas(array, array2));
 
             ToString(array, array2);
 
@@ -365,7 +368,8 @@ namespace AmigoInvisible
             do
             {
                 Shuffle(random, array2);
-            } while (!CompararCircular(array, array2));
+            } 
+            while (!CompararCircular(array, array2));
 
             ToString(array, array2);
 
@@ -379,12 +383,13 @@ namespace AmigoInvisible
             bool verificacion = int.TryParse(Console.ReadLine(), out respuesta);
             do
             {
-                if(respuesta > 3 || respuesta < 1|| !verificacion)
+                if (respuesta > 3 || respuesta < 1|| !verificacion)
                 {
                     Console.WriteLine("\t\t\t\tOpción inválida, número entero entre el 1 y el 3");
                     verificacion = int.TryParse(Console.ReadLine(), out respuesta);
                 }
-            } while (respuesta > 3 || respuesta < 1 || !verificacion);
+            } 
+            while (respuesta > 3 || respuesta < 1 || !verificacion);
                 
             return respuesta;
         }
@@ -401,7 +406,8 @@ namespace AmigoInvisible
                     Console.WriteLine("\t\t\t\tOpción inválida, número entero entre el 1 y el 4");
                     verificacion = int.TryParse(Console.ReadLine(), out respuesta);
                 }
-            } while (respuesta == 0 || respuesta > 4 || respuesta < 1 || !verificacion);
+            } 
+            while (respuesta == 0 || respuesta > 4 || respuesta < 1 || !verificacion);
 
             return respuesta;
         }
@@ -418,7 +424,8 @@ namespace AmigoInvisible
                     Console.WriteLine("\t\t\t\tOpción inválida, número entero entre el 1 y el 5");
                     verificacion = int.TryParse(Console.ReadLine(), out respuesta);
                 }
-            } while (respuesta == 0 || respuesta > 5 || respuesta < 1 || !verificacion);
+            } 
+            while (respuesta == 0 || respuesta > 5 || respuesta < 1 || !verificacion);
 
             return respuesta;
         }
@@ -569,7 +576,8 @@ namespace AmigoInvisible
                             do
                             {
                                 Shuffle(random, personas2);
-                            } while (!CompararParejas(personas, personas2));
+                            } 
+                            while (!CompararParejas(personas, personas2));
 
                             ToString(personas, personas2);
 
@@ -671,7 +679,8 @@ namespace AmigoInvisible
                             do
                             {
                                 Shuffle(random, personas2);
-                            } while (!CompararParejas(personas, personas2));
+                            } 
+                            while (!CompararParejas(personas, personas2));
 
                             ToString(personas, personas2);
 
@@ -696,7 +705,8 @@ namespace AmigoInvisible
                                 string[] temp = ShuffleCircular(random, personas2);
                                 Array.Copy(temp, personas2, temp.Length);
                                 //ya que nos devuelve un string nuestra funcion, lo guardamos en un temporal y despues la copiamos en el array deseado
-                            } while (!CompararCircular(personas, personas2));
+                            } 
+                            while (!CompararCircular(personas, personas2));
 
                             ToString(personas, personas2);
 
